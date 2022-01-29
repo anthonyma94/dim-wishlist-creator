@@ -1,0 +1,76 @@
+{
+    // Place your jerviswebb workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+    // Placeholders with the same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"scope": "javascript,typescript",
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    "New React component (no props)": {
+        "prefix": "rafc",
+        "body": [
+            "import React from \"react\";",
+            "",
+            "const $1 = () => {",
+            "$0",
+            "return <div></div>",
+            "}",
+            "export default $1;"
+        ],
+        "description": "New React component (no props)"
+    },
+    "New React TypeScript component": {
+        "prefix": "rafce",
+        "body": [
+            "import React from \"react\";",
+            "",
+            "export interface $1Props {",
+            "$2",
+            "}",
+            "",
+            "const $1: React.FC<$1Props> = (props) => {",
+            "$0",
+            "return <div></div>",
+            "}",
+            "export default $1;"
+        ],
+        "description": "New React TypeScript component"
+    },
+    "useState snippet": {
+        "prefix": "useState",
+        "body": [
+            "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"
+        ],
+        "description": "useState snippet"
+    },
+    "New Next Page": {
+        "prefix": "rafn",
+        "body": [
+            "import React from \"react\";",
+            "import { NextPage } from \"next\";",
+            "import Head from \"next/head\";",
+            "",
+            "const $1: NextPage = () => {",
+            "$0",
+            "  return (",
+            "    <>",
+            "      <Head>",
+            "        <title>$2</title>",
+            "      </Head>",
+            "    </>",
+            "  );",
+            "}",
+            "export default $1;"
+        ],
+        "description": "New Next Page"
+    }
+}
